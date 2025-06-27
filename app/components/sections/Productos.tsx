@@ -1,4 +1,5 @@
 'use client';
+import ProfileCard from '../ui/ProfileCard';
 
 export default function Productos() {
   const productos = [
@@ -7,28 +8,32 @@ export default function Productos() {
       titulo: "Equipos de Música",
       descripcion: "Altavoces, micrófonos, mezcladores y todo lo necesario para tu evento",
       imagen: "/images/equipos-musica.jpg",
-      categoria: "alquiler"
+      categoria: "alquiler",
+      icono: "🔊"
     },
     {
       id: 2,
       titulo: "Congeladores",
       descripcion: "Congeladores con o sin hielo para mantener tus bebidas frías",
       imagen: "/images/congeladores.jpg",
-      categoria: "alquiler"
+      categoria: "alquiler",
+      icono: "❄️"
     },
     {
       id: 3,
       titulo: "Grifos y Barriles",
       descripcion: "Grifos de cerveza y barriles para el servicio perfecto",
       imagen: "/images/grifos-barriles.jpg",
-      categoria: "alquiler"
+      categoria: "alquiler",
+      icono: "🍺"
     },
     {
       id: 4,
       titulo: "Alcohol y Bebidas",
       descripcion: "Amplia variedad de bebidas alcohólicas y refrescos",
       imagen: "/images/bebidas.jpg",
-      categoria: "venta"
+      categoria: "venta",
+      icono: "🥤"
     }
   ];
 
@@ -47,37 +52,31 @@ export default function Productos() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {productos.map((producto) => (
-            <div key={producto.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <div className="text-gray-500 text-center p-4">
-                  <div className="text-4xl mb-2">📷</div>
-                  <p>Imagen de {producto.titulo}</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {producto.titulo}
-                  </h3>
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    producto.categoria === 'alquiler' 
-                      ? 'bg-blue-100 text-blue-800' 
-                      : 'bg-green-100 text-green-800'
-                  }`}>
-                    {producto.categoria === 'alquiler' ? 'Alquiler' : 'Venta'}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  {producto.descripcion}
-                </p>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                  Solicitar información
-                </button>
-              </div>
-            </div>
+            <ProfileCard
+              key={producto.id}
+              title={producto.titulo}
+              description={producto.descripcion}
+              image={producto.imagen}
+              icon={producto.icono}
+              category={producto.categoria === 'alquiler' ? 'Alquiler' : 'Venta'}
+              className="delay-100"
+            />
           ))}
         </div>
 
+        {/* Información adicional con nuevo diseño */}
+        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
+          <h3 className="text-2xl font-bold mb-4">Servicio de Reparto</h3>
+          <p className="text-lg mb-6">
+            Disponemos de furgoneta para el reparto de todos nuestros productos 
+            en Onda y alrededores. ¡Pregunta por nuestras tarifas!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Consultar reparto
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
