@@ -4,40 +4,50 @@ export default function CongeladoresSection() {
   const congeladores = [
     {
       id: 1,
-      modelo: "Congelador Pequeño",
-      capacidad: "5-8 sacas",
-      descripcion: "Ideal para eventos pequeños y familiares",
+      modelo: "Congelador Sin Hielo",
+      capacidad: "0 sacas",
+      descripcion: "Solo el congelador, sin hielo incluido",
       caracteristicas: ["Compacto", "Fácil transporte", "Económico"],
-      conHielo: true,
+      conHielo: false,
       sinHielo: true,
-      imagen: "/images/congeladores/congelador-pequeno.jpg"
+      imagen: "/images/congeladores/congelador-sin-hielo.jpg"
     },
     {
       id: 2,
-      modelo: "Congelador Mediano",
-      capacidad: "10-12 sacas",
-      descripcion: "Perfecto para fiestas y eventos medianos",
+      modelo: "Congelador + 5 Sacas",
+      capacidad: "5 sacas",
+      descripcion: "Congelador con 5 sacas de hielo incluidas",
       caracteristicas: ["Capacidad media", "Eficiente", "Versátil"],
       conHielo: true,
-      sinHielo: true,
-      imagen: "/images/congeladores/congelador-mediano.jpg"
+      sinHielo: false,
+      imagen: "/images/congeladores/congelador-5-sacas.jpg"
     },
     {
       id: 3,
-      modelo: "Congelador Grande",
-      capacidad: "15-20 sacas",
-      descripcion: "Para eventos grandes y celebraciones",
+      modelo: "Congelador + 10 Sacas",
+      capacidad: "10 sacas",
+      descripcion: "Congelador con 10 sacas de hielo incluidas",
       caracteristicas: ["Gran capacidad", "Potente", "Profesional"],
       conHielo: true,
-      sinHielo: true,
-      imagen: "/images/congeladores/congelador-grande.jpg"
+      sinHielo: false,
+      imagen: "/images/congeladores/congelador-10-sacas.jpg"
+    },
+    {
+      id: 4,
+      modelo: "Congelador + 15 Sacas",
+      capacidad: "15 sacas",
+      descripcion: "Congelador con 15 sacas de hielo incluidas",
+      caracteristicas: ["Máxima capacidad", "Potente", "Profesional"],
+      conHielo: true,
+      sinHielo: false,
+      imagen: "/images/congeladores/congelador-15-sacas.jpg"
     }
   ];
 
   const sacasSueltas = [
-    { cantidad: "1 saca", imagen: "/images/hielo/saca-1.jpg" },
-    { cantidad: "3 sacas", imagen: "/images/hielo/sacas-3.jpg" },
-    { cantidad: "5 sacas", imagen: "/images/hielo/sacas-5.jpg" }
+    { cantidad: "10 sacas", imagen: "/images/hielo/sacas-10.jpg" },
+    { cantidad: "15 sacas", imagen: "/images/hielo/sacas-15.jpg" },
+    { cantidad: "20 sacas", imagen: "/images/hielo/sacas-20.jpg" }
   ];
 
   return (
@@ -54,15 +64,15 @@ export default function CongeladoresSection() {
         </div>
 
         {/* Grid de congeladores */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {congeladores.map((congelador) => (
             <div key={congelador.id} className="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               {/* Imagen del congelador */}
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center relative overflow-hidden">
+              <div className="h-32 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center relative overflow-hidden">
                 {/* Placeholder para imagen - se reemplazará con imagen real */}
                 <div className="text-white text-center">
-                  <div className="text-4xl mb-2">❄️</div>
-                  <p className="font-semibold">{congelador.capacidad}</p>
+                  <div className="text-2xl mb-1">❄️</div>
+                  <p className="font-semibold text-sm">{congelador.capacidad}</p>
                 </div>
                 {/* Cuando tengas la imagen real, descomenta estas líneas:
                 <img 
@@ -73,22 +83,22 @@ export default function CongeladoresSection() {
                 */}
               </div>
               
-              <div className="p-6">
-                <div className="text-center mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+              <div className="p-4">
+                <div className="text-center mb-3">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
                     {congelador.modelo}
                   </h3>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
                     {congelador.capacidad}
                   </span>
                 </div>
                 
-                <p className="text-gray-600 text-sm mb-4 text-center">
+                <p className="text-gray-600 text-xs mb-3 text-center">
                   {congelador.descripcion}
                 </p>
                 
-                <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2 text-sm">Características:</h4>
+                <div className="mb-3">
+                  <h4 className="font-semibold text-gray-900 mb-1 text-xs">Características:</h4>
                   <ul className="space-y-1">
                     {congelador.caracteristicas.map((caracteristica, index) => (
                       <li key={index} className="text-xs text-gray-600 flex items-center">
@@ -100,14 +110,14 @@ export default function CongeladoresSection() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="flex flex-col space-y-2">
+                  <div className="flex flex-col space-y-1">
                     {congelador.conHielo && (
-                      <span className="bg-blue-600 text-white px-3 py-1 rounded text-sm">
+                      <span className="bg-blue-600 text-white px-2 py-1 rounded text-xs">
                         Con Hielo
                       </span>
                     )}
                     {congelador.sinHielo && (
-                      <span className="bg-gray-600 text-white px-3 py-1 rounded text-sm">
+                      <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">
                         Sin Hielo
                       </span>
                     )}
@@ -182,6 +192,33 @@ export default function CongeladoresSection() {
               <p className="text-lg">
                 Reparto en toda la provincia de Castellón con nuestra furgoneta refrigerada
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA simple */}
+        <div className="mt-8 text-center">
+          <div className="bg-blue-600 text-white p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-2">
+              ¿Necesitas más información?
+            </h3>
+            <p className="mb-4">
+              No dudes en contactarnos para reservar tus congeladores y sacas de hielo o si necesitas más información.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://wa.me/34600000000" 
+                target="_blank"
+                className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors"
+              >
+                WhatsApp
+              </a>
+              <a 
+                href="#" 
+                className="bg-white text-blue-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Solicitar Presupuesto
+              </a>
             </div>
           </div>
         </div>

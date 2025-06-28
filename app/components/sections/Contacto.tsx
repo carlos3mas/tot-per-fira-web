@@ -93,20 +93,20 @@ export default function Contacto() {
                 </a>
               </div>
 
-              {/* Formulario Google */}
+              {/* Solicitar Presupuesto */}
               <div className="bg-blue-600 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-3">📋</div>
+                  <div className="text-3xl mr-3">💰</div>
                   <div>
-                    <h4 className="text-xl font-bold">Formulario de Google</h4>
-                    <p className="text-blue-100">Solicitud detallada</p>
+                    <h4 className="text-xl font-bold">Solicitar Presupuesto</h4>
+                    <p className="text-blue-100">Presupuesto personalizado</p>
                   </div>
                 </div>
                 <a 
                   href="#" 
                   className="block w-full bg-white text-blue-600 text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Rellenar formulario
+                  Solicitar Presupuesto
                 </a>
               </div>
 
@@ -152,7 +152,7 @@ export default function Contacto() {
                 href="#" 
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
-                Formulario Detallado
+                Solicitar Presupuesto
               </a>
             </div>
           </div>

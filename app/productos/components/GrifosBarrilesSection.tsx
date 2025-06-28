@@ -9,13 +9,6 @@ export default function GrifosBarrilesSection() {
       caracteristicas: ["Fácil instalación", "Mantenimiento simple", "Económico"],
       imagen: "/images/grifos/grifo-simple.jpg"
     },
-    {
-      id: 2,
-      modelo: "Grifo Doble",
-      descripcion: "Dos grifos para diferentes tipos de cerveza",
-      caracteristicas: ["Doble salida", "Versátil", "Profesional"],
-      imagen: "/images/grifos/grifo-doble.jpg"
-    }
   ];
 
   const barriles = [
@@ -63,47 +56,49 @@ export default function GrifosBarrilesSection() {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Grifos Profesionales
           </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {grifos.map((grifo) => (
-              <div key={grifo.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
-                  {/* Placeholder para imagen - se reemplazará con imagen real */}
-                  <div className="text-white text-center">
-                    <div className="text-4xl mb-2">🍺</div>
-                    <p className="font-semibold">{grifo.modelo}</p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              {grifos.map((grifo) => (
+                <div key={grifo.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="h-48 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                    {/* Placeholder para imagen - se reemplazará con imagen real */}
+                    <div className="text-white text-center">
+                      <div className="text-4xl mb-2">🍺</div>
+                      <p className="font-semibold">{grifo.modelo}</p>
+                    </div>
+                    {/* Cuando tengas la imagen real, descomenta estas líneas:
+                    <img 
+                      src={grifo.imagen} 
+                      alt={grifo.modelo}
+                      className="w-full h-full object-cover"
+                    />
+                    */}
                   </div>
-                  {/* Cuando tengas la imagen real, descomenta estas líneas:
-                  <img 
-                    src={grifo.imagen} 
-                    alt={grifo.modelo}
-                    className="w-full h-full object-cover"
-                  />
-                  */}
-                </div>
-                
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">
-                    {grifo.modelo}
-                  </h4>
                   
-                  <p className="text-gray-600 mb-4">
-                    {grifo.descripcion}
-                  </p>
-                  
-                  <div className="mb-4">
-                    <h5 className="font-semibold text-gray-900 mb-2">Características:</h5>
-                    <ul className="space-y-1">
-                      {grifo.caracteristicas.map((caracteristica, index) => (
-                        <li key={index} className="text-sm text-gray-600 flex items-center">
-                          <span className="text-amber-500 mr-2">•</span>
-                          {caracteristica}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="p-6">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-3">
+                      {grifo.modelo}
+                    </h4>
+                    
+                    <p className="text-gray-600 mb-4">
+                      {grifo.descripcion}
+                    </p>
+                    
+                    <div className="mb-4">
+                      <h5 className="font-semibold text-gray-900 mb-2">Características:</h5>
+                      <ul className="space-y-1">
+                        {grifo.caracteristicas.map((caracteristica, index) => (
+                          <li key={index} className="text-sm text-gray-600 flex items-center">
+                            <span className="text-amber-500 mr-2">•</span>
+                            {caracteristica}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
@@ -199,6 +194,33 @@ export default function GrifosBarrilesSection() {
                 {marca}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* CTA simple */}
+        <div className="mt-8 text-center">
+          <div className="bg-blue-600 text-white p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-2">
+              ¿Necesitas más información?
+            </h3>
+            <p className="mb-4">
+              No dudes en contactarnos para reservar tus grifos y barriles o si necesitas más información.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://wa.me/34600000000" 
+                target="_blank"
+                className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors"
+              >
+                WhatsApp
+              </a>
+              <a 
+                href="#" 
+                className="bg-white text-blue-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Solicitar Presupuesto
+              </a>
+            </div>
           </div>
         </div>
       </div>

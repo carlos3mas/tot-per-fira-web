@@ -3,13 +3,25 @@
 export default function BebidasSection() {
   const categorias = [
     {
+      id: 'ginebra',
+      nombre: 'Ginebra',
+      icono: '🍸',
+      productos: [
+        { marca: 'Bombay Sapphire', descripcion: 'Ginebra Premium', imagen: "/images/bebidas/bombay-sapphire.jpg" },
+        { marca: 'Beefeater', descripcion: 'Ginebra London Dry', imagen: "/images/bebidas/beefeater.jpg" },
+        { marca: 'Hendrick\'s', descripcion: 'Ginebra Premium', imagen: "/images/bebidas/hendricks.jpg" },
+        { marca: 'Gordon\'s', descripcion: 'Ginebra London Dry', imagen: "/images/bebidas/gordons.jpg" }
+      ]
+    },
+    {
       id: 'whisky',
       nombre: 'Whisky',
       icono: '🥃',
       productos: [
         { marca: 'Jack Daniel\'s', descripcion: 'Whisky Tennessee', imagen: "/images/bebidas/jack-daniels.jpg" },
         { marca: 'Johnnie Walker', descripcion: 'Whisky Escocés', imagen: "/images/bebidas/johnnie-walker.jpg" },
-        { marca: 'Jameson', descripcion: 'Whisky Irlandés', imagen: "/images/bebidas/jameson.jpg" }
+        { marca: 'Jameson', descripcion: 'Whisky Irlandés', imagen: "/images/bebidas/jameson.jpg" },
+        { marca: 'Ballantine\'s', descripcion: 'Whisky Escocés', imagen: "/images/bebidas/ballantines.jpg" }
       ]
     },
     {
@@ -19,17 +31,41 @@ export default function BebidasSection() {
       productos: [
         { marca: 'Bacardi', descripcion: 'Ron Blanco', imagen: "/images/bebidas/bacardi.jpg" },
         { marca: 'Havana Club', descripcion: 'Ron Cubano', imagen: "/images/bebidas/havana-club.jpg" },
-        { marca: 'Captain Morgan', descripcion: 'Ron Especiado', imagen: "/images/bebidas/captain-morgan.jpg" }
+        { marca: 'Captain Morgan', descripcion: 'Ron Especiado', imagen: "/images/bebidas/captain-morgan.jpg" },
+        { marca: 'Brugal', descripcion: 'Ron Dominicano', imagen: "/images/bebidas/brugal.jpg" }
       ]
     },
     {
-      id: 'refrescos',
-      nombre: 'Refrescos',
+      id: 'licores',
+      nombre: 'Licores',
+      icono: '🍷',
+      productos: [
+        { marca: 'Jägermeister', descripcion: 'Licor de hierbas', imagen: "/images/bebidas/jagermeister.jpg" },
+        { marca: 'Tequila Rosa', descripcion: 'Tequila con sabor', imagen: "/images/bebidas/tequila-rosa.jpg" },
+        { marca: 'Limoncello', descripcion: 'Licor de limón', imagen: "/images/bebidas/limoncello.jpg" },
+        { marca: 'Cremas', descripcion: 'Licores cremosos', imagen: "/images/bebidas/cremas.jpg" }
+      ]
+    },
+    {
+      id: 'bebidas',
+      nombre: 'Bebidas',
       icono: '🥤',
       productos: [
         { marca: 'Coca-Cola', descripcion: 'Cola 2L', imagen: "/images/bebidas/coca-cola.jpg" },
-        { marca: 'Pepsi', descripcion: 'Cola 2L', imagen: "/images/bebidas/pepsi.jpg" },
-        { marca: 'Fanta', descripcion: 'Naranja 2L', imagen: "/images/bebidas/fanta.jpg" }
+        { marca: 'Fantas', descripcion: 'Naranja 2L y Limón 2L', imagen: "/images/bebidas/fanta.jpg" },
+        { marca: 'Red Bull', descripcion: 'Bebida energética', imagen: "/images/bebidas/red-bull.jpg" },
+        { marca: 'Agua', descripcion: 'Agua mineral', imagen: "/images/bebidas/agua.jpg" }
+      ]
+    },
+    {
+      id: 'cervezas',
+      nombre: 'Cervezas',
+      icono: '🍺',
+      productos: [
+        { marca: 'Mahou', descripcion: 'Cerveza Española', imagen: "/images/bebidas/mahou.jpg" },
+        { marca: 'Estrella Damm', descripcion: 'Cerveza Catalana', imagen: "/images/bebidas/estrella-damm.jpg" },
+        { marca: 'San Miguel', descripcion: 'Cerveza Española', imagen: "/images/bebidas/san-miguel.jpg" },
+        { marca: 'Cruzcampo', descripcion: 'Cerveza Andaluza', imagen: "/images/bebidas/cruzcampo.jpg" }
       ]
     }
   ];
@@ -48,7 +84,7 @@ export default function BebidasSection() {
         </div>
 
         {/* Grid de categorías */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categorias.map((categoria) => (
             <div key={categoria.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="text-center mb-6">
@@ -132,8 +168,8 @@ export default function BebidasSection() {
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              "Vodka", "Ginebra", "Tónica", "Agua", 
-              "Zumos", "Cerveza Botella", "Vino", "Cava"
+              "Vodka", "Tónica", "Zumos", "Vino", 
+              "Cava", "Sidra", "Champagne", "Licor de Café"
             ].map((bebida) => (
               <div key={bebida} className="text-sm text-gray-600 bg-white p-2 rounded shadow-sm">
                 {bebida}
@@ -142,15 +178,14 @@ export default function BebidasSection() {
           </div>
         </div>
 
-        {/* CTA final */}
+        {/* CTA simple */}
         <div className="mt-8 text-center">
           <div className="bg-blue-600 text-white p-6 rounded-lg">
             <h3 className="text-xl font-bold mb-2">
-              ¿Necesitas algo específico?
+              ¿Necesitas más información?
             </h3>
             <p className="mb-4">
-              Si no encuentras lo que buscas, consúltanos. 
-              Podemos conseguir prácticamente cualquier bebida.
+              No dudes en contactarnos para reservar tus bebidas o si necesitas más información.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -164,7 +199,7 @@ export default function BebidasSection() {
                 href="#" 
                 className="bg-white text-blue-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
-                Formulario
+                Solicitar Presupuesto
               </a>
             </div>
           </div>
